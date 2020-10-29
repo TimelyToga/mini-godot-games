@@ -7,14 +7,17 @@
 radius = 213.6
 height = 339.795
 
-[node name="Shuttle" type="Area2D"]
+[node name="Shuttle" type="KinematicBody2D"]
 position = Vector2( 266.225, 315.335 )
-scale = Vector2( 0.25, 0.25 )
+rotation = 1.5708
+scale = Vector2( 0.1, 0.1 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -16.7249, 16.7249 )
+position = Vector2( -22.2729, -11.0143 )
+rotation = 1.5708
 shape = SubResource( 1 )

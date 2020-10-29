@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 var target = Vector2 ()
 var velocity = Vector2 ()
@@ -9,7 +9,10 @@ func _ready():
 
 func _process(delta):
 	velocity = position.direction_to(target) * speed
+	look_at(target)
 	position += velocity * delta
+	if position.distance_to(target) > 5:
+		velocity = move_and_slide(velocity)
 
 func _unhandled_input(event):
 	if event.is_action_pressed('gothere'):
