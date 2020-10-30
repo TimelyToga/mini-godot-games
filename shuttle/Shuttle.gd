@@ -10,8 +10,8 @@ func _ready():
 func _process(delta):
 	velocity = position.direction_to(target) * speed
 	look_at(target)
-	position += velocity * delta
-	if position.distance_to(target) > 5:
+	if position.distance_to(target) > 7:
+		position += velocity * delta
 		velocity = move_and_slide(velocity)
 
 func _unhandled_input(event):
